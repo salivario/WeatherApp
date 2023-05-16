@@ -18,11 +18,6 @@ export class HeaderComponent implements OnInit{
           routerLink: '/'
       },
       {
-        label: 'Wearher List',
-        icon: 'pi pi-fw pi-file',
-        routerLink: '/weather'
-      },
-      {
         label: 'Favorite',
         icon: 'pi pi-fw pi-file',
         routerLink: '/favorite'
