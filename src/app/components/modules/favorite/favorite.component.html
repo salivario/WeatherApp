@@ -1,1 +1,22 @@
-<p>favorite works!</p>
+<div class="container">
+    <div class="card" *ngFor="let capitalCity of favorite$ |async">
+        <p-card header="{{capitalCity.city.name}}" subheader="{{capitalCity.city.country | country}}">
+            <div>
+                <p-fieldset legend="About weather:" [toggleable]="true">
+                    <div>
+                        Weather: {{capitalCity.list[0].weather[0].description}}
+                    </div>
+                    <div>
+                        Cloudiness: {{capitalCity.list[0].clouds.all}}%
+                    </div>
+                    <div>
+                        Wind speed: {{capitalCity.list[0].wind.speed}} ms
+                    </div>
+                    <div>
+                        Visibility: {{ capitalCity.list[0].visibility/1000 | number:'1.0-2' }}km
+                    </div>
+                </p-fieldset>
+            </div>
+        </p-card>
+    </div>
+</div>

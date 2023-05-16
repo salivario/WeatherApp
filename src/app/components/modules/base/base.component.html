@@ -1,1 +1,30 @@
-<p>base works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()" style="padding-top: 10px; padding-left: 20px;">
+    <input class="form" type="text" formControlName="search" placeholder="What city are you loking for">
+    <p-button type="submit" label="Search!" styleClass="p-button-help"></p-button>
+</form>
+
+<div class="container" *ngIf="capitalCity">
+    <div class="card">
+        <p-card header="{{capitalCity.city.name}}" subheader="{{capitalCity.city.country | country}}">
+            <div>
+                <p-fieldset legend="About weather:" [toggleable]="true">
+                    <div>
+                        Weather: {{capitalCity.list[0].weather[0].description}}
+                    </div>
+                    <div>
+                        Cloudiness: {{capitalCity.list[0].clouds.all}}%
+                    </div>
+                    <div>
+                        Wind speed: {{capitalCity.list[0].wind.speed}} ms
+                    </div>
+                    <div>
+                        Visibility: {{ capitalCity.list[0].visibility/1000 | number:'1.0-2' }}km
+                    </div>
+                </p-fieldset>
+            </div>
+            <ng-template pTemplate="footer">
+                <p-button label="Add to favorite" icon="pi pi-check" (click)='postfavorite(capitalCity.city.name)'></p-button>
+            </ng-template>
+        </p-card>
+    </div>
+</div>

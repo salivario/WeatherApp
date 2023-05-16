@@ -2,25 +2,32 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { WeatherComponent } from './weather/weather.component';
-import { AdminComponent } from './admin/admin.component';
 import { BaseComponent } from './base/base.component';
-
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { CountryPipe } from 'src/app/pipes/country.pipe';
+import { FieldsetModule } from 'primeng/fieldset';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     FavoriteComponent,
     WeatherComponent,
-    AdminComponent,
-    BaseComponent
+    BaseComponent,
+    CountryPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CardModule,
+    ButtonModule,
+    FieldsetModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     FavoriteComponent,
     WeatherComponent,
-    AdminComponent,
     BaseComponent
   ]
 })

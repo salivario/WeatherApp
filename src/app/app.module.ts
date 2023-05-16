@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AllModule } from './components/all.module';
 import { UiModuleModule } from "./components/ui/ui-module.module";
+import { HttpClientModule }   from '@angular/common/http';
+
+
 
 @NgModule({
     declarations: [
@@ -16,7 +19,8 @@ import { UiModuleModule } from "./components/ui/ui-module.module";
         BrowserModule,
         AppRoutingModule,
         AllModule,
-        UiModuleModule
+        UiModuleModule,
+        HttpClientModule
     ]
 })
 export class AppModule { }
