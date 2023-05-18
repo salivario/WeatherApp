@@ -9,13 +9,20 @@ import { MainService } from 'src/app/services/main.service';
   styleUrls: ['./favorite.component.scss']
 })
 export class FavoriteComponent implements OnInit{
-  constructor(private servise: MainService){}
+  constructor(private serviсe: MainService){}
   favorite$!: Observable<ICapital[]>
   forSearch!: string[];
   ngOnInit(): void {
-    this.favorite$ = this.servise.getFV();
-    console.log(this.favorite$)
+    this.updateFavoriteList();
   }
 
+  removeFromFV(name: string) {
+    this.serviсe.removeFromFV(name);
+    this.updateFavoriteList();
+  }
+
+  private updateFavoriteList() {
+    this.favorite$ = this.serviсe.getFV();
+  }
 
 }

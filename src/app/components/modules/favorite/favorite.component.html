@@ -17,6 +17,9 @@
                     </div>
                 </p-fieldset>
             </div>
+            <ng-template pTemplate="footer">
+                <p-button label="Delete from favorite" (click)="removeFromFV(capitalCity.city.name)" icon="pi pi-check"></p-button>
+            </ng-template>
         </p-card>
     </div>
 </div>

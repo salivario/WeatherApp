@@ -18,7 +18,6 @@ export class MainService {
 
   addToFV(name: string | null) {
     if (name === null) {
-      // Обработка случая, когда значение равно null
       return;
     }
   
@@ -30,6 +29,16 @@ export class MainService {
     }
   
     favorites.push(name);
+    this.localStorage.setItem("favorites", JSON.stringify(favorites));
+  }
+  removeFromFV(name: string) {
+    const favorites = JSON.parse(this.localStorage.getItem("favorites") || "[]");
+    const index = favorites.findIndex((fav: string) => fav === name);
+  
+    if (index > -1) {
+      favorites.splice(index, 1);
+    }
+  
     this.localStorage.setItem("favorites", JSON.stringify(favorites));
   }
 
