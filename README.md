@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## About
 
-This project created by angular & PrimeNG
+This project created with angular framework & PrimeNG library of ready-made components
 
 ##PrimeNG
 
