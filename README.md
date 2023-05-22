@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## About
 
-This project created by angular13 & PrimeNG
+This project created by angular & PrimeNG
 
 ##PrimeNG
 
